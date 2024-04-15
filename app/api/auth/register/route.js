@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { hash } from "bcrypt";
+import { hash } from "bcryptjs";
 import { getUserByEmail, registerUser } from "@/lib/queries";
 
 export async function POST(request) {
@@ -10,10 +10,10 @@ export async function POST(request) {
         const userExist = await getUserByEmail(email)
 
         if (!userExist) {
-            console.log({ fName, lName, email, password, updatesConsent });
+            // console.log({ fName, lName, email, password, updatesConsent });
 
             const hashedPassword = await hash(password, 10); //hashing the password
-            console.log({ hashedPassword });
+            
             const response = await registerUser(fName, lName, email, hashedPassword, updatesConsent)
 
             if (!response) {
