@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bolierplate using next auth as a authentication
 
-## Getting Started
+## Features
 
-First, run the development server:
+This boilerplate supports below list of features:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1) Register user using email, password
+2) Sign in user using email, password
+3) Forgot password
+4) forgot password link on email using nodemailer
+5) sussecc in resetting password email using nodemailer
+6) Database using supabase
+7) Prisma for ORM
+8) middleware
+9) uploadThing for uploading files
+10) GlobalAPI file for creating APIs
+11) Next js 14.1
+12) Password encryption using bcryptjs
+13) Tailwind styling
+14) Email templates using create email
+15) time formatting using moment
+16) Shadcn ui
+17) Form validations using ZOD
+18) use-media-query hook
+19) queries.js file for writing database queries
+20) Protected dashboard page
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
