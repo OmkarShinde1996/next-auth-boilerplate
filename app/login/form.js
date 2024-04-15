@@ -33,9 +33,6 @@ const loginFormSchema = z.object({
         .string()
         .min(8, {
             message: "Password must be at least 8 characters.",
-        })
-        .refine(password => /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password), {
-            message: "Password must contain both numbers and characters.",
         }),
 })
 

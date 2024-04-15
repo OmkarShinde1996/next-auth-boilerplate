@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { v4 as uuidv4 } from 'uuid'
 import { getUserByResetPasswordToken, updatePassword } from '@/lib/queries'
-import { hash } from 'bcrypt';
+import { hash } from 'bcryptjs';
 import { sendPasswordResetSuccessEmail } from '@/lib/mail';
 
 export const POST = async (request) => {
@@ -9,10 +9,6 @@ export const POST = async (request) => {
 
   //fetch user from db where token match
   const user = await getUserByResetPasswordToken(token);
-  console.log({user});
-  console.log({password});
-  console.log({token});
-  console.log(user.length !== 0 && user[0]?.emailResetPassword === token);
   if (user.length !== 0 && user[0]?.emailResetPassword === token) {
     const hashedPassword = await hash(password, 10); //hashing the password
     // update the password in DB

@@ -22,7 +22,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
                     throw new Error("User not found.")
                 }
                 const passwordCorrect = await compare(password, user?.password)
-                console.log('[passwordCorrect]', passwordCorrect);
                 if (user && passwordCorrect) {
                     return { id: user.id, fName: user.fName, lName: user.lName, email: user.email, avatarUrl: user.avatarUrl, }
                 } else {

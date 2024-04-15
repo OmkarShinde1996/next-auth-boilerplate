@@ -28,16 +28,16 @@ const resetPasswordFormSchema = z.object({
         .min(8, {
             message: "Password must be at least 8 characters.",
         })
-        .refine(password => /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password), {
-            message: "Password must contain both numbers and characters.",
+        .refine(password => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password), {
+            message: "Password must contains at least one upper case letter, one lower case letter,one number, and one special character.",
         }),
     confirmPassword: z
         .string()
         .min(8, {
             message: "Password must be at least 8 characters.",
         })
-        .refine(password => /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password), {
-            message: "Password must contain both numbers and characters.",
+        .refine(password => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password), {
+            message: "Password must contains at least one upper case letter, one lower case letter,one number, and one special character.",
         }),
 }).refine((data) => data.password === data.confirmPassword, {
     message: "Passwords don't match",

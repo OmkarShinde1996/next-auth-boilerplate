@@ -56,7 +56,7 @@ export const WrappletResetPasswordSuccessEmail = (props) => {
                 immediately.
               </Text>
               <Text className="text-start">
-                Remember to use a password that is both strong and unique to your
+                Remember to use a password that is both strong and unique for your
                 Wrapplet account.
               </Text>
               <Text className="text-start">
