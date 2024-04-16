@@ -75,7 +75,7 @@ const LoginForm = () => {
         <>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 w-[85%] md:w-[70%] ">
-                    <div className='w-full'>
+                    <Link href={`${process.env.NEXT_PUBLIC_URL}`} className='w-full'>
                         <Image
                             src={'/longLogo.svg'}
                             width={250}
@@ -83,7 +83,7 @@ const LoginForm = () => {
                             alt='wrapplet logo'
                             className='-ml-3'
                         />
-                    </div>
+                    </Link>
                     <div className="text-2xl font-bold tracking-wide">
                         Login to get started
                     </div>

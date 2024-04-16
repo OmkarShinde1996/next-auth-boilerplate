@@ -5,7 +5,7 @@ import { auth } from "@/auth";
 
 export default async function LoginPage() {
   const session = await auth()
-  console.log({ session });
+  
 
   if (session) {
     redirect("/");

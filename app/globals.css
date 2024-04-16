@@ -60,3 +60,55 @@
     @apply bg-background text-foreground;
   }
 }
+
+.use-automation-zoom-in {
+  animation: automation-zoom-in 0.5s;
+}
+
+@keyframes automation-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  /* scrollbar-width: auto; */
+  scrollbar-width: none;
+  scrollbar-color: #333333 #1a1a1a;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 2px;
+  /* display: none; */
+}
+
+*::-webkit-scrollbar-track {
+  background: #333333;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #707070bd;
+  border-radius: 5px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+/* .hiddenScrollbar::-webkit-scrollbar {
+  display: none;
+} */
+
+/* Hide scrollbar for IE, Edge and Firefox */
+/* .hiddenScrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+} */

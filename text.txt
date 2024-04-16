@@ -1,0 +1,46 @@
+Nav Menus
+---------------
+Dashboard
+Compose
+ - Articles
+ - Content Tags
+ - Automations
+Boost
+ - Loyalty Program
+ - Suggestions (P2)
+ - Magic Links (P2)
+Monetizing
+ - Advertisements (P2)
+ - Memberships
+ - Affiliate Program (P2)
+Community
+ - Members
+ - Segments
+ - Opinion Polls
+ - Member Data
+ - Surveys
+ - Membership Forms
+Analytics
+ - Membership Insights
+ - Posts Insights
+ - Clicks Insights
+Learn More (P2)
+ - Blog
+ - Updates
+ - Guides
+Settings
+    Account
+     - Profile
+     - Notifications
+     - Password
+    Administrator
+     - Company
+     - Publication
+     - Design Studio
+     - Website
+     - Payment Accounts
+     - Integrations
+     - Billing
+View Site
+Help Center
+Sign Out
