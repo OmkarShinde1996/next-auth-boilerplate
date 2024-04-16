@@ -94,7 +94,7 @@
 
 *::-webkit-scrollbar-track {
   background: #333333;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 *::-webkit-scrollbar-thumb {

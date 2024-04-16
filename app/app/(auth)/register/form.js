@@ -20,6 +20,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import Link from 'next/link'
 import Image from 'next/image'
 import { LoaderCircle } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 // import { hash } from 'bcrypt'
 
 const registerFormSchema = z.object({
@@ -56,6 +57,7 @@ const registerFormSchema = z.object({
 })
 
 const form = () => {
+    const router = useRouter()
     const form = useForm({
         resolver: zodResolver(registerFormSchema),
         defaultValues: {
@@ -82,7 +84,8 @@ const form = () => {
                 console.log({result});
                 console.log(result.status, result.status !== 200);
                 if (result.status !== 200) throw new Error(result.body);
-                console.log("Registration Successful", response);
+                router.push("/");
+                router.refresh();
                 toast({ title: "Registration Successful1" });
             }
             // Process response here
@@ -97,7 +100,7 @@ const form = () => {
         <>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 w-[85%] md:w-[70%] ">
-                    <div className='w-full'>
+                    <Link href={`${process.env.NEXT_PUBLIC_URL}`} className='w-full'>
                         <Image
                             src={'/longLogo.svg'}
                             width={250}
@@ -105,7 +108,7 @@ const form = () => {
                             alt='wrapplet logo'
                             className='-ml-3'
                         />
-                    </div>
+                    </Link>
                     <div className="text-2xl font-bold tracking-wide">
                         Sign up to get started
                     </div>

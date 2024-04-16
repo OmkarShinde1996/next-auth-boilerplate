@@ -117,11 +117,11 @@ const Navbar = ({ session, user }) => {
     const [showSettings, setShowSettings] = useState(false);
     return (
         <>
-            {showSettings && <div className='hidden md:block h-full'>
+            {showSettings && <div className='hidden lg:block h-full'>
                 <SettingsMenu onClose={() => setShowSettings(false)} />
             </div>}
 
-            {!showSettings && <div className='space-y-4 relative h-full hidden md:block'>
+            {!showSettings && <div className='space-y-4 h-full hidden p-3 lg:block overflow-y-auto'>
                 <div className='w-full flex justify-start items-center'>
                     <Link href={'/'} className=''>
                         <Image
@@ -133,8 +133,8 @@ const Navbar = ({ session, user }) => {
                         />
                     </Link>
                 </div>
-                <div className='h-[380px] overflow-hidden overflow-y-auto'>
-                    <nav className='w-full space-y-3 overflow-y-auto'>
+                <div className=''>
+                    <nav className='w-full space-y-3 h-full'>
                         <Link href={'/dashboard'} className='text-xs gap-2 flex flex-row items-center hover:bg-muted hover:cursor-pointer transition-all duration-300 ease-in-out px-2 py-1 rounded-sm'>
                             <LayoutDashboard className='w-4 h-4' />
                             Dashboard
@@ -160,7 +160,7 @@ const Navbar = ({ session, user }) => {
                         </div>
                     </nav>
                 </div>
-                <div className='absolute w-full bottom-0 space-y-2 bg-background'>
+                <div className='w-full space-y-2'>
                     <Separator />
                     <div className='p-2 bg-muted/30 rounded-md space-y-2'>
                         <div className='flex flex-row justify-between items-center'>
@@ -194,8 +194,8 @@ const Navbar = ({ session, user }) => {
             </div>}
 
 
-            <Sheet className='md:hidden'>
-                <SheetTrigger asChild className='md:hidden'>
+            <Sheet className='lg:hidden'>
+                <SheetTrigger asChild className='lg:hidden m-3'>
                     <Button variant="outline" size="icon">
                         <Menu />
                     </Button>
@@ -203,7 +203,7 @@ const Navbar = ({ session, user }) => {
 
                 <SheetContent side={'left'}>
                     {showSettings && <SettingsMenu onClose={() => setShowSettings(false)} />}
-                    {!showSettings && <div className='space-y-4 relative h-full'>
+                    {!showSettings && <div className='space-y-4 h-full p-6 lg:hidden overflow-y-auto'>
                         <div className='w-full flex justify-start items-center'>
                             <Link href={'/'} className=''>
                                 <Image
@@ -215,9 +215,9 @@ const Navbar = ({ session, user }) => {
                                 />
                             </Link>
                         </div>
-                        <div className='h-[450px] overflow-hidden overflow-y-auto'>
-                            <nav className='w-full space-y-3 overflow-y-auto'>
-                                <Link href={'/dashboard'} className='text-xs gap-2 flex flex-row items-center hover:bg-muted hover:cursor-pointer transition-all duration-300 ease-in-out px-2 py-2 rounded-sm'>
+                        <div className=''>
+                            <nav className='w-full space-y-3 h-full'>
+                                <Link href={'/dashboard'} className='text-xs gap-2 flex flex-row items-center hover:bg-muted hover:cursor-pointer transition-all duration-300 ease-in-out px-2 py-1 rounded-sm'>
                                     <LayoutDashboard className='w-4 h-4' />
                                     Dashboard
                                 </Link>
@@ -228,22 +228,23 @@ const Navbar = ({ session, user }) => {
                                 <DropdownMenu title='Analytics' icon={<PieChart className='w-4 h-4' />} menuList={AnalyticsDropDownMenu} />
                                 <DropdownMenu title='Learn More' icon={<BookCheck className='w-4 h-4' />} menuList={LearnMoreDropDownMenu} />
                                 <Separator />
-                                <Link href={'#'} onClick={() => setShowSettings(true)} className='text-xs gap-2 flex flex-row items-center hover:bg-muted hover:cursor-pointer transition-all duration-300 ease-in-out px-2 py-2 rounded-sm'>
+                                <Link href={'#'} onClick={() => setShowSettings(true)} className='text-xs gap-2 flex flex-row items-center hover:bg-muted hover:cursor-pointer transition-all duration-300 ease-in-out px-2 py-1 rounded-sm'>
                                     <Wrench className='w-4 h-4' />
                                     Settings
                                 </Link>
-                                <Link href={'/helpCenter'} className='text-xs gap-2 flex flex-row items-center hover:bg-muted hover:cursor-pointer transition-all duration-300 ease-in-out px-2 py-2 rounded-sm'>
+                                <Link href={'/helpCenter'} className='text-xs gap-2 flex flex-row items-center hover:bg-muted hover:cursor-pointer transition-all duration-300 ease-in-out px-2 py-1 rounded-sm'>
                                     <LifeBuoy className='w-4 h-4' />
                                     Help Center
                                 </Link>
-                                <div onClick={() => signOut()} className='text-xs gap-2 flex flex-row items-center hover:bg-muted hover:cursor-pointer transition-all duration-300 ease-in-out px-2 py-2 rounded-sm'>
+                                <div onClick={() => signOut()} className='text-xs gap-2 flex flex-row items-center hover:bg-muted hover:cursor-pointer transition-all duration-300 ease-in-out px-2 py-1 rounded-sm'>
                                     <LogOut className='w-4 h-4' />
                                     Sign Out
                                 </div>
                             </nav>
                         </div>
-                        <div className='absolute w-full bottom-0 space-y-2 z-20 bg-background'>
-                            <div className='p-3 md:p-2 bg-muted/50 rounded-md space-y-2'>
+                        <div className='w-full space-y-2'>
+                            <Separator />
+                            <div className='p-2 bg-muted/30 rounded-md space-y-2'>
                                 <div className='flex flex-row justify-between items-center'>
                                     <span className='text-sm font-semibold'>Free Plan</span>
                                     <div className='flex gap-1 justify-center items-center py-1 px-2 bg-gradient-to-r from-primary from-10% via-30% to-emerald-800 to-90% rounded-md'>
@@ -284,7 +285,7 @@ const Navbar = ({ session, user }) => {
 
 function SettingsMenu({ onClose }) {
     return (
-        <div className='relative h-full'>
+        <div className='relative h-full p-6 lg:p-3'>
             <Button onClick={onClose} className='absolute bottom-0 rounded-full flex flex-row gap-1 justify-center items-center text-xs text-muted-foreground hover:text-white bg-transparent hover:bg-transparent transition-all duration-300 ease-in-out'>
                 <ChevronLeft className='w-4 h-4' />
                 Go Back

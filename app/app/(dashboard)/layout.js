@@ -35,7 +35,7 @@ export default async function RootLayout({ children }) {
 
     return (
         <main className="lg:grid grid-cols-[220px_1fr] h-screen overflow-hidden">
-            <div className="w-full border-r p-4">
+            <div className="w-full border-r overflow-hidden">
                 <Navbar session={session} user={user}/>
             </div>
             <div className="w-full h-full p-6 overflow-y-auto -mt-5 lg:mt-0 pb-20 lg:pb-0">

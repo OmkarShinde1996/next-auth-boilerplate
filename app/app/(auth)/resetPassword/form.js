@@ -65,7 +65,7 @@ const FormPage = () => {
         <>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 w-[80%] md:w-[60%]">
-                    <div className='w-full'>
+                    <Link href={`${process.env.NEXT_PUBLIC_URL}`} className='w-full'>
                         <Image
                             src={'/longLogo.svg'}
                             width={250}
@@ -73,7 +73,7 @@ const FormPage = () => {
                             alt='wrapplet logo'
                             className='-ml-3'
                         />
-                    </div>
+                    </Link>
                     <div className="text-2xl font-bold tracking-wide">
                         Enter your registered email id
                     </div>
