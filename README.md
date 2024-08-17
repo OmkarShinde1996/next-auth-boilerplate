@@ -26,3 +26,9 @@ This boilerplate supports below list of features:
 19) queries.js file for writing database queries
 20) Protected dashboard page
 ```
+
+
+## Commands to execute
+```
+npm i
+```
