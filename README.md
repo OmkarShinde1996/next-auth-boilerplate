@@ -31,4 +31,5 @@ This boilerplate supports below list of features:
 ## Commands to execute
 ```
 npm i
+npx prisma migrate dev --name initial_models_initiated
 ```
